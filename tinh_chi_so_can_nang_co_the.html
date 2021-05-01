@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số cân nặng của cơ thể</title>
+</head>
+<body>
+    <h2>Tính chỉ số cân nặng của cơ thể</h2>
+    <input type="number" id="chieucao" placeholder="nhập chiều cao của bạn!">
+    <input type="number" id="cannang" placeholder="nhập cân nặng của bạn!">
+    <button type="button" onclick="check()">Check</button>
+    <p  id="display1"></p>
+    <script>
+        function check(){
+            
+            let chieucao = +document.getElementById("chieucao").value;
+            let cannang = +document.getElementById("cannang").value;
+            bmi = cannang / (Math.pow(chieucao,2));
+            let message;
+            let colorMess= document.getElementById("display1").style;
+            if(bmi<16){
+                message="Gầy độ 3!";
+                colorMess.color="red";
+            }
+            else if(bmi<=16 && bmi <17){
+                message="Gầy độ 2";
+                colorMess.color="yellow";
+            }
+            else if(bmi<=17 && bmi <18.5){
+                message="Gầy độ 1";
+                colorMess.color="blue";
+            }
+            else if(bmi <=18.5 && bmi <25){
+                message="Bình thường";
+                colorMess.color="green";
+            }
+            else if(bmi<=25 &&bmi<30){
+                message="Thừa cân";
+                colorMess.color="blue";
+            }
+            else if(bmi<=30 && bmi<35){
+                message="Béo phì độ 1";
+                colorMess.color="yellow";
+            }
+            else if(bmi<=35 && bmi<40){
+                message="Béo phì độ 2";
+                colorMess.color="orienge";            }
+            else {
+                message="Béo phì độ 3!";
+                colorMess.color="red"
+            }
+            document.getElementById("display1").innerHTML=("Cơ thể bạn "+message);
+        }
+    </script>
+</body>
+</html>

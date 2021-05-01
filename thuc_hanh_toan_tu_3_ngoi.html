@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thực hành toán tử 3 ngôi</title>
+</head>
+<body>
+    <h2>Bài 1</h2>
+    <input type="number" id="soA" placeholder="Nhập số a">
+    <input type="number" id="soB" placeholder="Nhập số b">
+    <br><button type="button" onclick="compare()">So sánh</button>
+    <p style="color:green;" id="screen"></p>
+    <h2>Bài 2</h2>
+    <input type="text" id="login" style="width: 300px" placeholder="Employee,Director,No login,other?">
+    <button type="button" onclick="bai2()">check</button>
+    <p style="color:green;" id="screen2"></p>
+
+    <script>
+    function bai2(){
+            let message= document.getElementById("screen2");
+            let login = document.getElementById("login");
+            if (login.value == 'Employee') {
+                message.innerHTML = 'Hello';
+            } else if (login.value == 'Director') {
+                message.innerHTML = 'Greetings';
+            } else if (login.value == '') {
+                message.innerHTML = 'No login';
+            } else {
+                message.innerHTML = '';
+            }
+        }
+        function compare(){
+            if((Number)(document.getElementById("soA").value) + Number (document.getElementById("soB").value)<4){
+                document.getElementById("screen").innerHTML=("Below");
+            }
+            else document.getElementById("screen").innerHTML=("Over");
+        }
+    </script>
+</body>
+</html>
